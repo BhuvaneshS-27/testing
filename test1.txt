@@ -1,1 +1,68 @@
-2nd test
+Set global Git username	            :git config --global user.name "Your Name"
+Set global Git email	            :git config --global user.email "your@email.com"
+Set local Git username (for repo)	:git config user.name "Your Name"
+Set local Git email (for repo)	    :git config user.email "your@email.com"
+View global Git config	            :git config --global --list
+View local Git config	            :git config --list or git config --local --list
+View a specific value (global)	    :git config --global user.name
+View a specific value (local)	    :git config user.name
+Unset global Git username	        :git config --global --unset user.name
+Unset local Git username	        :git config --unset user.name
+
+
+Clone a repository : git clone <repo url>
+check status       : git status
+
+**Basic cd Commands**
+
+Purpose	Command Example	Description
+Go to a specific folder	cd folder_name
+Go to a path	cd /home/user/folder (Linux) cd C:\Users\Name (Windows)
+Go back one folder	cd ..
+Go back two folders	cd ../..
+Go to home directory	cd ~
+Go to root directory	cd /
+Go to previous directory	cd -
+With spaces in folder name	cd "My Documents"
+Go to current directory (refresh)	cd .
+
+Tips for Efficient Use
+Tip	                    Example                         Description
+Auto-complete folder     cd fo<TAB>	                    Press Tab to auto-complete folder names
+Use absolute path	     cd /Users/Bhuva/Projects	    From the root or drive letter
+Use relative path	     cd Projects	                From your current directory
+
+//transfer to staging area//
+git add filename.txt    This stages filename.txt —
+                        meaning Git is now tracking it for the next commit.
+
+git add foldername/     This stages all files inside foldername/
+                        (including subfolders and their contents).
+
+git add -u              This will not stage new (untracked) files,
+                        only modifications and deletions to files Git already knows about.
+
+
+
+//UNDO the staged changes//
+git restore --staged <filename>     This removes the file from the staging area,
+                                    but keeps your actual edits in the working directory.
+
+git restore --staged .              This un-stages all currently staged changes
+                                    (again, your edits are still safe).
+
+git restore <filename>        # Discards changes in working directory
+                               But be careful: this will erase your changes
+                               unless they're committed or backed up.
+
+//saving in local git repository //
+git commit -m "your descriptive message"    git commit saves the changes you’ve staged (with git add) into the local Git repository’s history.
+                                            It creates a snapshot of your project at that point in time.
+                                            This snapshot records the exact state of the files you staged, along with a message describing what changed.
+
+//Common git diff Variants//
+Command	Shows Differences Between...
+git diff	            Working directory ↔ Staging area (unstaged changes)
+git diff --staged	    Staging area ↔ Last commit (staged changes)
+git diff HEAD	        Working directory ↔ Last commit (both staged + unstaged)
+
